@@ -45,6 +45,16 @@ img{
     font-weight: bold;
 }
 
+.icon::before{
+    display: inline-block;
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900; 
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
 .game{
     position: relative; /*because we are going to have some absolute
     positions*/
@@ -87,6 +97,19 @@ img{
         display: flex;
         justify-content: space-between;
         align-items: center;
+    }
+
+    .viewers {
+        display:flex;
+        align-items:center;
+    }
+
+    .viewers::before{
+        content: "\f007";
+        display: inline-block;
+        font-family: "Font Awesome 5 Free";      
+        font-size: 0.75em;
+        margin-right: 0.5em;
     }
     .streamers img{
         border: 2px solid var(--clr-dark);
@@ -204,3 +227,4 @@ img{
         transform: scale(1.2);
     }
 }
+
