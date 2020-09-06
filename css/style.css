@@ -59,6 +59,7 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  text-align: center;
 }
 
 .streamers img {
@@ -126,7 +127,7 @@ img {
 .back {
   opacity: 0;
   position: absolute;
-  bottom: 0;
+  top: 55%;
   left: 0;
   right: 0;
   display: -webkit-box;
@@ -139,7 +140,9 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 1em;
+  gap: 1.5em;
+  -webkit-transform: translateY(35%);
+          transform: translateY(35%);
 }
 
 .back .streaming-info {
@@ -161,7 +164,7 @@ img {
 }
 
 .background {
-  background: #234;
+  background: #282e36;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -177,8 +180,8 @@ img {
 }
 
 .game:hover .rank {
-  -webkit-transform: translate(150%, -80%);
-          transform: translate(150%, -80%);
+  -webkit-transform: translate(150%, -32%);
+          transform: translate(150%, -32%);
 }
 
 .game:hover .front {
@@ -197,6 +200,27 @@ img {
 
 .game:hover .back {
   opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transition: opacity 150ms linear, -webkit-transform 250ms;
+  transition: opacity 150ms linear, -webkit-transform 250ms;
+  transition: transform 250ms, opacity 150ms linear;
+  transition: transform 250ms, opacity 150ms linear, -webkit-transform 250ms;
+}
+
+.game:hover .back .streamers {
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.game:hover .back .streamer {
+  font-size: .9rem;
+}
+
+.game:hover .back .name {
+  font-weight: bold;
 }
 
 .game:hover .background {
@@ -204,8 +228,8 @@ img {
   transition: var(--transition);
   opacity: 100ms linear;
   opacity: 1;
-  -webkit-transform: scale(1.4, 1.2);
-          transform: scale(1.4, 1.2);
+  -webkit-transform: scale(1.35, 1.2) translateY(5%);
+          transform: scale(1.35, 1.2) translateY(5%);
 }
 
 @-webkit-keyframes gameName {

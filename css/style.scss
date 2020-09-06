@@ -1,5 +1,3 @@
-//Sass let's go
-
 *,
 *::before,
 *::after {
@@ -56,6 +54,7 @@ img{
 
 .streamers{
     display: flex;
+    text-align: center;
     img{
         width: 2em;
         height: 2em;
@@ -105,13 +104,14 @@ img{
 .back{
     opacity: 0;
     position: absolute;
-    bottom:0;
+    top: 55%;
     left:0;
     right:0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1em;
+    gap: 1.5em;
+    transform: translateY(35%);
 
     .streaming-info{
 
@@ -130,7 +130,7 @@ img{
 }
 
 .background {
-    background: #234;
+    background: rgb(40, 46, 54);
     position: absolute;
     top:0;
     bottom:0;
@@ -144,8 +144,9 @@ img{
 }
 
 .game:hover{
+    
     .rank{
-        transform: translate(150%,-80%)
+        transform: translate(150%,-32%)
     }
     .front {
         transform: translateY(-30%) scale(.8);
@@ -159,13 +160,27 @@ img{
 
     .back{
         opacity: 1;
+        transform: translateY(0);
+        transition: transform 250ms, opacity 150ms linear;
+        .streamers {
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        .streamer {
+            font-size: .9rem;
+        }
+
+        .name {
+            font-weight: bold;
+        }
     }
     .background{
         transition: 
             var(--transition);
             opacity: 100ms linear;
         opacity: 1;
-        transform: scale(1.4,1.2);
+        transform: scale(1.35,1.2) translateY(5%);
     }
 }
 
